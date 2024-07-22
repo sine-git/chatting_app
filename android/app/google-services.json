@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1014239916524",
+    "project_id": "chattingapp-eabb5",
+    "storage_bucket": "chattingapp-eabb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014239916524:android:41e710836fa01ae355d0c9",
+        "android_client_info": {
+          "package_name": "com.chatting.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRNGBF-cNM5tqrqQb6XGDImcoC3lrfxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014239916524:android:086b8e8214a5f6c855d0c9",
+        "android_client_info": {
+          "package_name": "com.example.chattingApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRNGBF-cNM5tqrqQb6XGDImcoC3lrfxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014239916524:android:b4dd10437ad2bcf655d0c9",
+        "android_client_info": {
+          "package_name": "com.example.chatting_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRNGBF-cNM5tqrqQb6XGDImcoC3lrfxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
