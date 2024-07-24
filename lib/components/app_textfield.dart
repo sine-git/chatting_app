@@ -24,13 +24,16 @@ class AppTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: TextField(
+        style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
         focusNode: focusNode,
         onChanged: onchanged,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(width: 0.5),
+              borderSide: BorderSide(
+                  width: 0.5,
+                  color: Theme.of(context).colorScheme.inversePrimary),
             ),
             hintText: hintText,
             hintStyle: TextStyle(
@@ -43,10 +46,11 @@ class AppTextField extends StatelessWidget {
             filled: true,
             fillColor: fillColors != null
                 ? fillColors
-                : Theme.of(context).colorScheme.tertiary,
+                : Theme.of(context).colorScheme.background,
             border: OutlineInputBorder(
                 borderSide: BorderSide(
                     width: 0.5,
+                    //color: Theme.of(context).colorScheme.inversePrimary
                     color: Theme.of(context).colorScheme.inversePrimary),
                 borderRadius: BorderRadius.circular(8))),
       ),

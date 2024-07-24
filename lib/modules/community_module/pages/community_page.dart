@@ -13,7 +13,9 @@ class _CommunityPageState extends State<CommunityPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Community page"),
+        child: Text("Community page",
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.inversePrimary)),
       ),
     );
   }

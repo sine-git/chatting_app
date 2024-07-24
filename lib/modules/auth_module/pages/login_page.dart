@@ -50,8 +50,9 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Icon(
-                Icons.person_4_rounded,
+                Icons.lock,
                 size: 100,
+                color: Colors.grey,
               ),
             ),
             AppTextField(
@@ -79,7 +80,22 @@ class _LoginPageState extends State<LoginPage> {
                   : () {
                       _login(_emailController.text, _passwordController.text);
                     },
-            )
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Don't have any account?",
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary)),
+                TextButton(
+                  child: Text("Sin up"),
+                  onPressed: () {
+                    Modular.to.navigate("/register");
+                  },
+                )
+              ],
+            ),
           ],
         ),
       ),

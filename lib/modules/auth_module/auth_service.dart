@@ -21,6 +21,15 @@ class AuthService {
     }
   }
 
+  Future<UserCredential> singUp(String email, String password) async {
+    try {
+      return await _fireauth.createUserWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseException catch (e, tr) {
+      throw Exception(e.code);
+    }
+  }
+
   Stream<List<Map<String, dynamic>>> getUsers() {
     try {
       return _fireStore.collection("users").snapshots().map(((snapshot) {

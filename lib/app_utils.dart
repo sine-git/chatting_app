@@ -14,14 +14,20 @@ showSuccess(BuildContext context, String? message) {
       context: context,
       builder: (context) => AlertDialog(
             content: Container(
-              width: 500,
+              //  width: 500,
               child: Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10.0),
                     child: Icon(Icons.check_circle_rounded),
                   ),
-                  Text(message ?? "Operation successed")
+                  Text(
+                      softWrap: true,
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        height: 1.2,
+                      ),
+                      message ?? "Operation successed")
                 ],
               ),
             ),
@@ -33,7 +39,7 @@ showError(BuildContext context, String? message) {
       context: context,
       builder: (context) => AlertDialog(
             content: Container(
-              width: 500,
+              // width: 500,
               child: Row(
                 children: [
                   Padding(
@@ -43,7 +49,17 @@ showError(BuildContext context, String? message) {
                       color: Colors.red,
                     ),
                   ),
-                  Text(message ?? "Operation successed")
+                  Flexible(
+                    child: Text(
+                      message ?? "Operation successed",
+                      softWrap: true,
+                      // overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        height: 2,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),

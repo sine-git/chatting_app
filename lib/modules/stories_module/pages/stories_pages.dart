@@ -13,7 +13,9 @@ class _StoriesPagesState extends State<StoriesPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Stories page"),
+        child: Text("Stories page",
+            style:
+                TextStyle(color: Theme.of(context).colorScheme.inversePrimary)),
       ),
     );
   }
