@@ -44,59 +44,61 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.lock,
-                size: 100,
-                color: Colors.grey,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Icon(
+                  Icons.lock,
+                  size: 100,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            AppTextField(
-              hintText: "",
-              label: "Email",
-              obscureText: false,
-              controller: _emailController,
-              onchanged: (value) {
-                setState(() {});
-              },
-            ),
-            AppTextField(
-              controller: _passwordController,
-              hintText: "",
-              label: "Password",
-              obscureText: true,
-              onchanged: (value) {
-                setState(() {});
-              },
-            ),
-            AppButton(
-              text: "Login",
-              onTap: !_isFormFiflled()
-                  ? null
-                  : () {
-                      _login(_emailController.text, _passwordController.text);
+              AppTextField(
+                hintText: "",
+                label: "Email",
+                obscureText: false,
+                controller: _emailController,
+                onchanged: (value) {
+                  setState(() {});
+                },
+              ),
+              AppTextField(
+                controller: _passwordController,
+                hintText: "",
+                label: "Password",
+                obscureText: true,
+                onchanged: (value) {
+                  setState(() {});
+                },
+              ),
+              AppButton(
+                text: "Login",
+                onTap: !_isFormFiflled()
+                    ? null
+                    : () {
+                        _login(_emailController.text, _passwordController.text);
+                      },
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have any account?",
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.inversePrimary)),
+                  TextButton(
+                    child: Text("Sin up"),
+                    onPressed: () {
+                      Modular.to.navigate("/register");
                     },
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Don't have any account?",
-                    style: TextStyle(
-                        color: Theme.of(context).colorScheme.inversePrimary)),
-                TextButton(
-                  child: Text("Sin up"),
-                  onPressed: () {
-                    Modular.to.navigate("/register");
-                  },
-                )
-              ],
-            ),
-          ],
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

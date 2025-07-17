@@ -14,7 +14,7 @@ ThemeData lightMode = ThemeData(
         background: Colors.white,
         secondary: Colors.orange.shade200,
         inversePrimary: Colors.black,
-        surface: Colors.grey.shade300,
+        surface: const Color.fromARGB(255, 255, 255, 255),
         tertiary: Colors.white,
         inverseSurface: Colors.black),
     appBarTheme: AppBarTheme(

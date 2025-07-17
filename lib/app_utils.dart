@@ -19,12 +19,16 @@ showSuccess(BuildContext context, String? message) {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 10.0),
-                    child: Icon(Icons.check_circle_rounded),
+                    child: Icon(
+                      Icons.check_circle_rounded,
+                      color: Colors.green,
+                    ),
                   ),
                   Text(
                       softWrap: true,
                       overflow: TextOverflow.clip,
                       style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
                         height: 1.2,
                       ),
                       message ?? "Operation successed")
@@ -53,9 +57,11 @@ showError(BuildContext context, String? message) {
                     child: Text(
                       message ?? "Operation successed",
                       softWrap: true,
+
                       // overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
                       style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
                         height: 2,
                       ),
                     ),

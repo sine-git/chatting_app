@@ -14,13 +14,18 @@ class ChatService {
       String roomId = ids.join("_");
       _firestore
           .collection("chat_rooms")
-          //.doc(message.senderId + "_" + _authService.currentUser!.uid)
           .doc(roomId)
           .collection("messages")
           .add(message.toMap(message));
     } on FirebaseException catch (e) {
       throw (e.code);
     }
+  }
+
+  void sendNotification(String message) {
+    var payload = {
+      "notification": {"title": "Chatting App", "body": message}
+    };
   }
 
   Stream<QuerySnapshot> getMessages(String senderId) {
@@ -32,10 +37,9 @@ class ChatService {
       print("Message room Id is ${roomId}");
       return _firestore
           .collection("chat_rooms")
-          //.doc(_authService.currentUser!.uid + "_" + senderId)
           .doc(roomId)
           .collection("messages")
-          .orderBy("timestamp")
+          .orderBy("timestamp", descending: false)
           .snapshots();
     } on FirebaseException catch (e) {
       throw Exception(e.code);

@@ -33,6 +33,7 @@ class AuthService {
   Stream<List<Map<String, dynamic>>> getUsers() {
     try {
       return _fireStore.collection("users").snapshots().map(((snapshot) {
+        print("..... Getting all users");
         return snapshot.docs
             .map((docs) {
               final user = docs.data();

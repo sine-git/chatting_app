@@ -1,3 +1,4 @@
+import 'package:chatting_app/firebase/firebase_api.dart';
 import 'package:chatting_app/firebase_options.dart';
 import 'package:chatting_app/modes/light_mode.dart';
 import 'package:chatting_app/modes/theme_provider.dart';
@@ -12,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
       name: "Chatting App", options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseApi().initNotification();
   runApp(ChangeNotifierProvider(
     create: (context) => ThemeProvider(),
     child: ModularApp(module: MainModule(), child: MyApp()),

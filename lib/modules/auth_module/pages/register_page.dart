@@ -33,7 +33,10 @@ class _RegisterPageState extends State<RegisterPage> {
 
       closeDialog(context);
       showSuccess(context, "Registration successful");
-      Modular.to.navigate("/login");
+      _emailController.clear();
+      _passwordController.clear();
+      _confirmPasswordController.clear();
+      //  Modular.to.navigate("/login");
     } catch (e) {
       closeDialog(context);
       showError(context, e.toString());
@@ -42,7 +45,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   bool _isFormFiflled() {
     return _emailController.text.isNotEmpty &&
-        _passwordController.text.isNotEmpty;
+        _passwordController.text.isNotEmpty &&
+        _confirmPasswordController.text.isNotEmpty;
   }
 
   @override
